@@ -8,3 +8,6 @@ $AMIKUS_HOME/core/define.vh
 
 $AMIKUS_HOME/core/amikus_top.v
 $AMIKUS_HOME/core/ifuTop.v
+
+$AMIKUS_HOME/core/exu/exuTop.v
+$AMIKUS_HOME/core/exu/decoder.v

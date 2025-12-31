@@ -7,7 +7,8 @@ export AMIKUS_HOME=$(shell pwd)/../..
 CASE_PATH ?= $(AMIKUS_HOME)/simulation/case/add
 CASE_NAME ?= add
 
-FILELIST += -file /home/host/project/amikus/core/filelist.f
+FILELIST += -file $(AMIKUS_HOME)/core/filelist.f
+FILELIST += -file $(AMIKUS_HOME)/chisel/rtl_code/filelist.f
 
 build:
 	mkdir -p $(BUILD_DIR) && \

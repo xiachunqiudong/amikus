@@ -1,8 +1,8 @@
 module ifuTop (
   input  wire        clk,
   input  wire        rst,
-  output wire        instValid,
-  output wire [31:0] inst
+  output wire        ifu_instrValid,
+  output wire [31:0] ifu_instr
 );
 
   wire             pc_en;
@@ -25,10 +25,10 @@ module ifuTop (
   rom #(
     .AW(10),
     .DW(32)
-  ) instRom(
+  ) instrRom(
     .clk  (clk),
     .raddr(pc_Q[11:2]),
-    .rdata(inst[31:0])
+    .rdata(ifu_instr[31:0])
   );
 
 endmodule
