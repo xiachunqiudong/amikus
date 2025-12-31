@@ -16,5 +16,9 @@ object Elaborate extends App {
 
   print("hello world!")
 
-  circt.stage.ChiselStage.emitSystemVerilogFile(new exu.InstrDcdPla(), args, firtoolOptions)
+  // circt.stage.ChiselStage.emitSystemVerilogFile(new exu.InstrDcdPla(), args, firtoolOptions)
+
+  circt.stage.ChiselStage.emitSystemVerilogFile(new exu.Regfile(DW=64,AW=5,rdPortNum=2,wrPortNum=2), args, firtoolOptions)
+
+
 }
