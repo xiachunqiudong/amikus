@@ -1,2 +1,3 @@
 /simulation/sim/*
 /tvip-axi/*
+!/simulation/sim/Makefile

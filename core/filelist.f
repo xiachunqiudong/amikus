@@ -1,9 +1,9 @@
-/home/host/project/amikus/simulation/src/tb.sv
+$AMIKUS_HOME/simulation/src/tb.sv
 
-/home/host/project/amikus/common/REG.v
-/home/host/project/amikus/common/REG_RST.v
+$AMIKUS_HOME/common/REG.v
+$AMIKUS_HOME/common/REG_RST.v
 
-/home/host/project/amikus/core/define.vh
+$AMIKUS_HOME/core/define.vh
 
-/home/host/project/amikus/core/amikus_top.v
-/home/host/project/amikus/core/ifuTop.v
+$AMIKUS_HOME/core/amikus_top.v
+$AMIKUS_HOME/core/ifuTop.v
