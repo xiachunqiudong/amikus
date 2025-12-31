@@ -22,4 +22,13 @@ module ifuTop (
     .Q     (pc_Q[`XLEN-1:0])
   );
 
+  rom #(
+    .AW(10),
+    .DW(32)
+  ) instRom(
+    .clk  (clk),
+    .raddr(pc_Q[11:2]),
+    .rdata(inst[31:0])
+  );
+
 endmodule

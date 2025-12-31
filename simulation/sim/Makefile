@@ -19,8 +19,10 @@ build:
 	-top $(TOP) -l build.log
 
 sim:
-	$(BUILD_DIR)/simv +ram_init_path=$(CASE_PATH)/$(CASE_NAME).hex \
-	+fsdb_path=$(CASE_PATH)/$(CASE_NAME).fsdb
+	$(BUILD_DIR)/simv \
+	+rom_init_path=$(CASE_PATH)/$(CASE_NAME).hex \
+	+fsdb_path=$(CASE_PATH)/$(CASE_NAME).fsdb \
+	-l $(CASE_PATH)/$(CASE_NAME).vcs.log
 
 vd:
 	verdi -elab $(BUILD_DIR)/simv.daidir/kdb \

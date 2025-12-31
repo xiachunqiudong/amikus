@@ -4,3 +4,6 @@
 *.fsdb
 *.elf
 *.hex
+*.dis
+*.vcs.log
+chisel/out/*
