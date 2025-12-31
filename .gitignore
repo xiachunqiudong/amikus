@@ -1,3 +1,6 @@
 /simulation/sim/*
 /tvip-axi/*
 !/simulation/sim/Makefile
+*.fsdb
+*.elf
+*.hex

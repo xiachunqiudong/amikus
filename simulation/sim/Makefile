@@ -2,7 +2,10 @@ TOP = tb
 
 BUILD_DIR = ./build
 
-export AMIKUS_HOME=$(shell pwd)/../../
+export AMIKUS_HOME=$(shell pwd)/../..
+
+CASE_PATH ?= $(AMIKUS_HOME)/simulation/case/add
+CASE_NAME ?= add
 
 FILELIST += -file /home/host/project/amikus/core/filelist.f
 
