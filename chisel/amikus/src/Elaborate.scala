@@ -18,7 +18,8 @@ object Elaborate extends App {
 
   // circt.stage.ChiselStage.emitSystemVerilogFile(new exu.InstrDcdPla(), args, firtoolOptions)
 
-  circt.stage.ChiselStage.emitSystemVerilogFile(new exu.Regfile(DW=64,AW=5,rdPortNum=2,wrPortNum=2), args, firtoolOptions)
+  // circt.stage.ChiselStage.emitSystemVerilogFile(new exu.Regfile(DW=64,AW=5,rdPortNum=2,wrPortNum=2), args, firtoolOptions)
 
+  circt.stage.ChiselStage.emitSystemVerilogFile(new vlsu.PieceInfoTable(maxPieceNum=512), args, firtoolOptions)
 
 }
