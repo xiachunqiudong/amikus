@@ -29,37 +29,37 @@ module tb;
     end
   end
 
-  parameter RAM_AW = 20;
-  parameter AXI_AW = 32;
-  parameter AXI_DW = 128;
-
-  logic              arValid;
-  logic              arReady;
-  logic [AXI_AW-1:0] arAddr;
-  logic              rValid;
-  logic              rReady;
-  logic [AXI_DW-1:0] rData;
+  logic               axi_arValid;
+  logic               axi_arReady;
+  logic [`AXI_AW-1:0] axi_arAddr;
+  logic               axi_rValid;
+  logic               axi_rReady;
+  logic [`AXI_DW-1:0] axi_rData;
 
   amikus_top
   amikus(
-    .clk(clk),
-    .rst(rst)
+    .clk        (clk),
+    .rst        (rst),
+    .axi_arValid(axi_arValid),
+    .axi_arReady(axi_arReady),
+    .axi_arAddr (axi_arAddr[`AXI_AW-1:0]),
+    .axi_rValid (axi_rValid),
+    .axi_rReady (axi_rReady),
+    .axi_rdata  (axi_rData[`AXI_DW-1:0])
   );
 
+  rom #(.AW(`AXI_AW), .DW(`AXI_DW))
+  ram_u1 (
+    .clk    (clk),
+    .rst    (rst),
+    .arvalid(axi_arValid),
+    .arready(axi_arReady),
+    .araddr (axi_arAddr[`AXI_AW-1:0]),
+    .rValid (axi_rValid),
+    .rReady (axi_rReady),
+    .rData  (axi_rData[`AXI_DW-1:0])
+  );
 
-  // ram #(
-  //   .AW(RAM_AW),
-  //   .DW(AXI_DW)
-  // ) u_ram(
-  //   .clk    (clk),
-  //   .rst    (rst),
-  //   .arValid(arValid),
-  //   .arReady(arReady),
-  //   .arAddr (arAddr[RAM_AW-1:0]),
-  //   .rValid (rValid),
-  //   .rReady (rReady),
-  //   .rData  (rData[AXI_DW-1:0])
-  // );
 
   string fsdb_path;
 

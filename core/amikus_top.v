@@ -1,6 +1,12 @@
 module amikus_top(
-  input wire clk,
-  input wire rst
+  input  wire               clk,
+  input  wire               rst,
+  output wire               axi_arValid,
+  input  wire               axi_arReady,
+  output wire [`AXI_AW-1:0] axi_arAddr,
+  input  wire               axi_rValid,
+  output wire               axi_rReady,
+  input  wire [`AXI_DW-1:0] axi_rdata
 );
 
   wire        ifu_instrValid;

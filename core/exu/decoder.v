@@ -10,10 +10,10 @@ module decoder (
   assign lsrc2[4:0] = instr[24:20];
   assign ldst[4:0]  = instr[11:7];
 
-  InstrDcdPla
-  instrDcdPla(
-    .instr   (instr[31:0]),
-    .instrDcd(instrDcd[2:0])
-  );
+  // InstrDcdPla
+  // instrDcdPla(
+  //   .instr   (instr[31:0]),
+  //   .instrDcd(instrDcd[2:0])
+  // );
 
 endmodule
